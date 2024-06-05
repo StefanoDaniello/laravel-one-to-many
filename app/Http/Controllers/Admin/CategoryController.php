@@ -34,7 +34,7 @@ class CategoryController extends Controller
         $from_data = $request->validated();
         $from_data['slug'] = Category::generateSlug($from_data['name']);
         $newCategory = Category::create($from_data);
-        return redirect()->route('admin.categories.index', $newCategory->slug);
+        return redirect()->route('admin.categories.index', $newCategory->slug)->with('message', $newCategory->name . ' è stato creato');
     }
 
     /**

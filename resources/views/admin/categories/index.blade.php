@@ -7,7 +7,7 @@
     <div class="alert alert-success">{{session()->get('message')}}</div>
     @endif
     <div class="d-flex justify-content-between align-items-center py-4">
-        <h1>categories</h1>
+        <h1>Categories</h1>
         <a href="{{route('admin.categories.create')}}" class="btn btn-primary text-white">Crea nuovo category</a>
     </div>
 
