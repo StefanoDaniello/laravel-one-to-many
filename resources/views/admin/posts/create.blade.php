@@ -47,7 +47,7 @@
                 @error('category_id')
                 <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
-              </div>
+            </div>
             
             <div class="mb-3">
                 <button type="submit" class="btn btn-primary text-white">Crea</button>
