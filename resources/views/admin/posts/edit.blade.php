@@ -33,7 +33,7 @@
                 @if($post->image)
                 <img class="shadow rounded-4 m-4" width="150" src="{{asset('storage/' . $post->image)}}" alt="{{$post->title}}" id="uploadPreview">
                 @else
-                <img class="shadow rounded-4 m-4" width="150" src="{{ old('cover_image', $post->image) }}" alt="{{$post->title}}" id="uploadPreview">
+                <img class="shadow rounded-4 m-4" width="150" src="{{ old('image', $post->image) }}" alt="{{$post->title}}" id="uploadPreview">
                 @endif
             </div>
 
