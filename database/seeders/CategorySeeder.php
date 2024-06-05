@@ -12,6 +12,12 @@ class CategorySeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        $categories = ['Cronaca','Cultura e Cinema','Fotografia','Sport'];
+        for($index = 0; $index < count($categories); $index++){
+            $newCategory = new Category();
+            $newCategory->name = $categories[$index];
+            $newCategory->slug = Category::generateSlug($newCategory->name);
+            $newCategory->save();
+        }
     }
 }

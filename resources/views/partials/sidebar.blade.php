@@ -26,14 +26,15 @@
         </a>
       </div>
      
-      <div class="collapse" id="page-layouts" >
+      <div class="collapse" id="page-layouts"  >
         <ul class="nav flex-column sub-menu">
           <li class="nav-item">
             <a class="nav-link"><i class="fa-solid fa-tags fa-lg fa-fw"></i>
               <span> Tags</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link "><i class="fa-solid fa-list fa-lg fa-fw"></i>
+            <a class="nav-link {{Route::currentRouteName() == 'admin.categories.index' ? 'active' : ''}}"
+            href="{{route('admin.categories.index')}}"><i class="fa-solid fa-list fa-lg fa-fw"></i>
               <span> Categories</span></a>
         </ul>
       </div>

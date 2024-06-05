@@ -15,7 +15,7 @@
         <thead>
             <tr>
               <th scope="col" class="d-none d-lg-table-cell">Id</th>
-              <th scope="col">Title</th>
+              <th scope="col">Name</th>
               <th scope="col" class="d-none d-xl-table-cell">Slug</th>
               <th scope="col">Created At</th>
               <th scope="col">Update At</th>
@@ -26,7 +26,7 @@
             @foreach ($categories as $category)
             <tr>
                 <td class="d-none d-lg-table-cell">{{$category->id}}</td>
-                <td>{{$category->title}}</td>
+                <td>{{$category->name}}</td>
                 <td class="d-none d-xl-table-cell">{{$category->slug}}</td>
                 <td>{{$category->created_at}}</td>
                 <td>{{$category->updated_at}}</td>
@@ -37,7 +37,7 @@
                       @csrf
                       @method('DELETE')
                       <button type="submit" class="delete-button border-0 bg-transparent" title="Elimina" 
-                      data-item-title="{{ $category->title }}" >
+                      data-item-title="{{ $category->title }}" data-item-id="{{$category->id}}">
                         <i class="fa-solid fa-trash"></i>
                       </button>
                     </form>

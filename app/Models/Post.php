@@ -16,7 +16,8 @@ class Post extends Model
         'image',
         'content',
         'slug',
-        'user_id'
+        'user_id',
+        'category_id'
     ];
     public static function generateSlug($title)
     {
@@ -37,7 +38,7 @@ class Post extends Model
     public function user(){
         return $this->belongsTo(User::class);
     }
-    // public function category(){
-    //     return $this->belongsTo(Category::class);
-    // }
+    public function category(){
+        return $this->belongsTo(Category::class);
+    }
 }

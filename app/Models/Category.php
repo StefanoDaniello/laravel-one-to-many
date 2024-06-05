@@ -16,15 +16,9 @@ class Category extends Model
     }
     public static function generateSlug($name)
     {
-        //esso sostituisce gli spazi con "-"
         $slug = Str::slug($name, '-');
         $count = 1;
-        //controllo se esiste un slug(titolo) con lo stesso slug(titolo)
-        //viene aggiunto -
-        // 'slug'-> campo db
-        // $slug->titolo
         while (Category::where('slug', $slug)->first()) {
-            // $slug = Str::slug($name . '-' . $count . '-');
             $slug = Str::of($name)->slug('-') . "-{$count}";
             $count++;
         }

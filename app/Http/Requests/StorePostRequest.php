@@ -25,7 +25,8 @@ class StorePostRequest extends FormRequest
             'title' => 'required|unique:posts|max:200|min:3',
             'image' => 'nullable|image|max:255',
             'content' => 'nullable|max:255',
-            'user_id' => 'nullable|exists:users,id'
+            'user_id' => 'nullable|exists:users,id',
+            'category_id' => 'nullable|exists:categories,id'
         ];
     }
 
@@ -37,7 +38,9 @@ class StorePostRequest extends FormRequest
             'title.max' => 'Il titolo deve essere lungo massimo :max caratteri!',
             'title.min' => 'Il titolo deve essere lungo almeno :min caratteri!',
             'image.max' => 'La URL deve essere lungo massimo :max caratteri!',
-            'content.max' => 'Il contenuto deve essere lungo massimo :max caratteri!'
+            'content.max' => 'Il contenuto deve essere lungo massimo :max caratteri!',
+            'user_id.exists' => 'L\'utente selezionato non esiste',
+            'category_id.exists' => 'La categoria selezionata non esiste',
             
         ];
     }

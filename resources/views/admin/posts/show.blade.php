@@ -5,6 +5,9 @@
 <section>
     <h1>{{$post->title}}</h1>
     <p>{{$post->content}}</p>
+    @if($post->category)
+    <p> Catrgory: {{$post->category->name}}</p>
+    @endif
     <img src="{{asset('storage/'.$post->image)}}" alt="{{$post->title}}"> <br>
     <button class="btn btn-primary my-3">
         <a href="{{route('admin.posts.index')}}" class="text-white">Torna ai posts</a>
