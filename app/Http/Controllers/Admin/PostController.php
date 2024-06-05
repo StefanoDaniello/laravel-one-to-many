@@ -21,7 +21,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $id= Auth::id();
+        $id = Auth::id();
         //$posts = Post::all();
         // $posts = Post::paginate(3);
         $posts = Post::where('user_id', $id)->paginate(3);
@@ -48,7 +48,8 @@ class PostController extends Controller
         $from_data['user_id'] = Auth::id();
         if ($request->hasFile('image')) {
             //dd($request->image);
-            $name = $request->image->getClientOriginalName(); //o il nome che volete dare al file
+            $name = $request->image->getClientOriginalName(); 
+            //o il nome che volete dare al file
             // $path = $request->file('image')->storeAs(
             //     'post_images',
             //      $name
