@@ -4,7 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\Category;
 use Illuminate\Http\Request;
-
+use App\Http\Requests\StoreCategoryRequest;
+use App\Http\Requests\UpdateCategoryRequest;
 use App\Http\Controllers\Controller;
 class CategoryController extends Controller
 {
@@ -28,9 +29,12 @@ class CategoryController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreCategoryRequest $request)
     {
-        
+        $from_data = $request->validated();
+        $from_data['slug'] = Category::generateSlug($from_data['name']);
+        $newCategory = Category::create($from_data);
+        return redirect()->route('admin.categories.index', $newCategory->slug);
     }
 
     /**
@@ -52,9 +56,14 @@ class CategoryController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Category $category)
+    public function update(UpdateCategoryRequest $request, Category $category)
     {
-        //
+        $form_data = $request->all();
+        if ($category->name !== $form_data['name']) {
+            $form_data['slug'] = Category::generateSlug($form_data['name']);
+        }
+        $category->update($form_data);
+        return redirect()->route('admin.categories.show', $category->slug);
     }
 
     /**
@@ -63,6 +72,6 @@ class CategoryController extends Controller
     public function destroy(Category $category)
     {
         $category->delete();
-        return redirect()->route('admin.categories.index');
+        return redirect()->route('admin.categories.index')->with('message', $category->name . ' è stato eliminato');;
     }
 }
