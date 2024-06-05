@@ -3,8 +3,11 @@
 @section('title', 'Create Post')
 
 @section('content')
-    <section>
-        <h2>Edit Post</h2>
+    <section class="container m-auto">
+        <div class="d-flex align-items-center mt-3">
+            <a href="{{ route('admin.posts.index') }}" class="btn btn-primary "><i><i class="fa-solid fa-arrow-left"></i></a>
+            <h1 class="mx-3">Edit</h1>
+        </div>
         <form action="{{ route('admin.posts.update', $post) }}" method="POST">
             @csrf
             @method('PUT')

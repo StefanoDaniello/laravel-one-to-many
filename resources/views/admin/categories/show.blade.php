@@ -4,7 +4,11 @@
 @section('content')
 <section>
     <div class="d-flex justify-content-between align-items-center py-4">
-        <h1>{{$category->name}}</h1>
+      <div class=" d-flex align-items-center">
+        <a href="{{ route('admin.categories.index') }}" class="btn btn-primary "><i><i class="fa-solid fa-arrow-left"></i></a>
+        <h1 class="mx-3">{{$category->name}}</h1>
+      </div>
+        
         <div>
             <a href="{{route('admin.categories.edit',$category->slug)}}" class="btn btn-secondary">Edit</a>
             <form action="{{route('admin.categories.destroy', $category->slug)}}" method="POST" class="d-inline-block">

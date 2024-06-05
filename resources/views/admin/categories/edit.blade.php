@@ -3,8 +3,11 @@
 @section('title', 'Create category')
 
 @section('content')
-    <section>
-        <h2>Edit category</h2>
+    <section class="container m-auto">
+        <div class="d-flex align-items-center mt-3">
+            <a href="{{ route('admin.categories.index') }}" class="btn btn-primary "><i><i class="fa-solid fa-arrow-left"></i></a>
+            <h1 class="mx-3">Edit</h1>
+        </div>
         <form action="{{ route('admin.categories.update', $category) }}" method="category">
             @csrf
             @method('PUT')
