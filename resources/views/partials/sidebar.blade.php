@@ -4,6 +4,11 @@
       <span> Boolpress</span></h2>
   </a>
   <ul class="nav flex-column">
+    <li class="nav-item">
+      <a class="nav-link" href="{{route('home')}}"> <i class="fa-solid fa-house-chimney fa-lg fa-fw"></i>
+        <span>Home</span>
+      </a>
+    </li>
       <li class="nav-item">
         <a class="nav-link  {{Route::currentRouteName() == 'admin.dashboard' ? 'active' : ''}}" href="{{route('admin.dashboard')}}">
           <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i>

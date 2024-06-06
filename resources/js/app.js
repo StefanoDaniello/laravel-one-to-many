@@ -55,3 +55,9 @@ if (image) {
         };
     });
 }
+
+// const sidebar_toggle = document.getElementById("sidebar-toggle");
+// const sidebar = document.getElementById("sidebar");
+// sidebar_toggle.addEventListener("click", () => {
+//     sidebar.
+// })

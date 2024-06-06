@@ -2,12 +2,17 @@
     <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-white">
     <!-- Container wrapper -->
     <div class="container-fluid d-flex justify-content-between align-items-center">
-
-
-      <div class=" none-1 mx-3" id="search-container">
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <input type="text" placeholder="Search"/>
+      <div class="d-flex align-items-center">
+        <div class="mx-3" id="sidebar-toggle">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+        <div class=" none-1 mx-3" id="search-container">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" placeholder="Search"/>
+        </div>
       </div>
+
+   
 
       <!-- Right links -->
       <ul class="navbar-nav ms-auto d-flex flex-row ">

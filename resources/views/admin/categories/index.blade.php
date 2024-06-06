@@ -36,7 +36,7 @@
                     <form action="{{route('admin.categories.destroy', $category->slug)}}" method="POST" class="d-inline-block">
                       @csrf
                       @method('DELETE')
-                      <button type="submit" class="delete-button border-0 bg-transparent"   data-item-title="{{ $category->name }}">
+                      <button type="submit" class="delete-button border-0 bg-transparent" title="Elimina"  data-item-title="{{ $category->name }}">
                         <i class="fa-solid fa-trash"></i>
                       </button>
                     </form>
